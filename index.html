@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冒险岛奇袭者加点-技能加点方案与全面培养指南</title>
+    <meta name="description" content="冒险岛奇袭者加点全面指南，提供奇袭者一转至五转的加点顺序、技能分析、属性分配建议以及常见问题解答，帮助玩家打造强力角色。">
+    <meta name="keywords" content="冒险岛奇袭者加点,奇袭者技能加点,冒险岛奇袭者,奇袭者加点方案,冒险岛攻略">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: #f4f7fa;
+            color: #1e2a3a;
+            line-height: 1.6;
+        }
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header */
+        .site-header {
+            background: linear-gradient(135deg, #0b1a2e 0%, #1d3a5f 100%);
+            padding: 18px 0;
+            border-bottom: 4px solid #ff9a3c;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo-area h1 {
+            color: #fff;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+        .logo-area .sub {
+            color: #bcd0e5;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #d9e5f0;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        .nav-links a:hover {
+            color: #ff9a3c;
+            border-color: #ff9a3c;
+        }
+        /* Hero */
+        .hero {
+            background: linear-gradient(145deg, #f0f6ff 0%, #e2ecf7 100%);
+            padding: 45px 0;
+            border-bottom: 1px solid #d6e3f0;
+        }
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+        }
+        .hero-text {
+            flex: 1 1 400px;
+        }
+        .hero-text h2 {
+            font-size: 2.2rem;
+            color: #0b1a2e;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        .hero-text p {
+            font-size: 1.05rem;
+            color: #2b4a6b;
+            max-width: 620px;
+        }
+        .hero-badge {
+            background: #ff9a3c;
+            color: #0b1a2e;
+            font-weight: 700;
+            display: inline-block;
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            background: #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            text-align: center;
+        }
+        .stat-item strong {
+            display: block;
+            font-size: 1.6rem;
+            color: #1d3a5f;
+        }
+        .stat-item span {
+            font-size: 0.85rem;
+            color: #5a7a99;
+        }
+        /* Section 通用 */
+        .section-title {
+            font-size: 1.7rem;
+            margin: 45px 0 25px;
+            padding-left: 15px;
+            border-left: 5px solid #ff9a3c;
+            color: #0b1a2e;
+        }
+        .section-sub {
+            color: #5a7a99;
+            margin: -15px 0 25px 15px;
+        }
+        /* 加点步骤 */
+        .build-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+            border-top: 4px solid #1d3a5f;
+        }
+        .build-card h3 {
+            font-size: 1.4rem;
+            color: #1d3a5f;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .job-icon {
+            background: #ff9a3c;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #0b1a2e;
+            font-size: 1.1rem;
+        }
+        .skill-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+        .skill-list li {
+            padding: 10px 15px;
+            border-bottom: 1px dashed #dbe4ed;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+        .skill-name {
+            font-weight: 600;
+            color: #1d3a5f;
+            min-width: 130px;
+        }
+        .skill-points {
+            background: #ff9a3c;
+            color: #0b1a2e;
+            border-radius: 20px;
+            padding: 2px 12px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        .skill-note {
+            color: #5a7a99;
+            font-size: 0.9rem;
+            flex-basis: 100%;
+            padding-left: 10px;
+        }
+        .tip-box {
+            background: #eef5fc;
+            border-left: 4px solid #1d3a5f;
+            padding: 12px 18px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+        }
+        .tip-box strong {
+            color: #1d3a5f;
+        }
+        /* 属性分析 */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+        .stat-card h4 {
+            color: #1d3a5f;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        .stat-card p {
+            font-size: 0.95rem;
+            color: #3d5670;
+        }
+        /* 顺序表格 */
+        .order-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            margin: 20px 0;
+        }
+        .order-table th {
+            background: #1d3a5f;
+            color: #fff;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .order-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e6edf4;
+        }
+        .order-table tr:last-child td {
+            border-bottom: none;
+        }
+        .order-table tr:hover td {
+            background: #f6faff;
+        }
+        /* FAQ */
+        .faq-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px 25px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        .faq-item h3 {
+            font-size: 1.1rem;
+            color: #1d3a5f;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+        .faq-item p {
+            color: #3d5670;
+            font-size: 0.95rem;
+        }
+        /* 页脚 */
+        .site-footer {
+            background: #0b1a2e;
+            color: #9fb8cf;
+            padding: 35px 0 25px;
+            margin-top: 50px;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col li {
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #1d3a5f;
+            padding-top: 20px;
+            margin-top: 30px;
+            font-size: 0.85rem;
+        }
+        /* CTA 按钮 */
+        .btn-cta {
+            display: inline-block;
+            background: #ff9a3c;
+            color: #0b1a2e;
+            padding: 10px 28px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+        .btn-cta:hover {
+            background: #ffad5c;
+            transform: translateY(-2px);
+        }
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            .hero-text h2 {
+                font-size: 1.7rem;
+            }
+            .section-title {
+                font-size: 1.4rem;
+            }
+            .order-table {
+                font-size: 0.85rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-stats {
+                gap: 15px;
+            }
+            .stat-item {
+                padding: 8px 12px;
+            }
+            .skill-list li {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+            .skill-points {
+                align-self: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <header class="site-header">
+        <div class="wrapper header-inner">
+            <div class="logo-area">
+                <h1>冒险岛奇袭者加点指南</h1>
+                <div class="sub">MapleStory Striker Build</div>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#build">加点方案</a></li>
+                    <li><a href="#attributes">属性分析</a></li>
+                    <li><a href="#order">加点顺序</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero 首屏 -->
+        <section class="hero">
+            <div class="wrapper hero-content">
+                <div class="hero-text">
+                    <span class="hero-badge">热门职业攻略</span>
+                    <h2>奇袭者加点核心思路</h2>
+                    <p>奇袭者（Striker）是冒险岛中海盗分支的强力近战职业，以闪电与拳技结合著称。合理的加点能显著提升练级效率与BOSS输出。本指南提供从一转至五转的完整加点思路、技能取舍与属性分配建议。</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <strong>5</strong>
+                            <span>转职阶段</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>60+</strong>
+                            <span>核心技能</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>2种</strong>
+                            <span>主流流派</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="flex: 0 1 300px; text-align: center;">
+                    <div style="background: #1d3a5f; color: #fff; border-radius: 20px; padding: 30px 20px;">
+                        <div style="font-size: 3rem; margin-bottom: 10px;">⚡</div>
+                        <p style="font-size: 1.1rem; font-weight: 600;">闪电连击</p>
+                        <p style="font-size: 0.9rem; opacity: 0.8;">高爆发 · 连击快感</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="wrapper">
+            <!-- 加点方案 -->
+            <section id="build">
+                <h2 class="section-title">奇袭者加点方案详解</h2>
+                <p class="section-sub">按转职阶段逐一说明技能加点优先级</p>
+
+                <!-- 一转 -->
+                <div class="build-card">
+                    <h3><span class="job-icon">1</span> 一转 · 海盗（Level 10-30）</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-name">半月踢</span> <span class="skill-points">1点</span> <span class="skill-note">前置技能，后续需要</span></li>
+                        <li><span class="skill-name">疾风步</span> <span class="skill-points">10点</span> <span class="skill-note">移动速度增加，练级手感提升明显</span></li>
+                        <li><span class="skill-name">百裂拳</span> <span class="skill-points">10点</span> <span class="skill-note">主要输出技能，快速打击</span></li>
+                        <li><span class="skill-name">HP增加</span> <span class="skill-points">10点</span> <span class="skill-note">提升生存能力，打BOSS更稳</span></li>
+                        <li><span class="skill-name">回马踢</span> <span class="skill-points">10点</span> <span class="skill-note">范围伤害，练级辅助</span></li>
+                    </ul>
+                    <div class="tip-box">
+                        <strong>加点建议：</strong> 一转技能点充裕，优先满疾风步和百裂拳。若前期感觉生存压力大，可先加HP增加。
+                    </div>
+                </div>
+
+                <!-- 二转 -->
+                <div class="build-card">
+                    <h3><span class="job-icon">2</span> 二转 · 冲锋队长（Level 30-60）</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-name">蓄能激爽拳</span> <span class="skill-points">10点</span> <span class="skill-note">核心输出，蓄力攻击高伤害</span></li>
+                        <li><span class="skill-name">急速拳</span> <span class="skill-points">10点</span> <span class="skill-note">攻击速度提升，必备</span></li>
+                        <li><span class="skill-name">狂暴打击</span> <span class="skill-points">10点</span> <span class="skill-note">范围多段攻击，清怪效率高</span></li>
+                        <li><span class="skill-name">生命吸收</span> <span class="skill-points">5点</span> <span class="skill-note">攻击吸血，提升续航</span></li>
+                        <li><span class="skill-name">精通防御</span> <span class="skill-points">5点</span> <span class="skill-note">被动防御，打BOSS容错率更高</span></li>
+                        <li><span class="skill-name">二转强化</span> <span class="skill-points">10点</span> <span class="skill-note">被动属性强化</span></li>
+                    </ul>
+                    <div class="tip-box">
+                        <strong>核心思路：</strong> 二转是奇袭者成型的关键期，优先满蓄能激爽拳和急速拳，保证输出节奏。
+                    </div>
+                </div>
+
+                <!-- 三转 -->
+                <div class="build-card">
+                    <h3><span class="job-icon">3</span> 三转 · 斗士（Level 60-100）</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-name">闪电击</span> <span class="skill-points">15点</span> <span class="skill-note">标志性技能，召唤闪电攻击</span></li>
+                        <li><span class="skill-name">连环拳</span> <span class="skill-points">15点</span> <span class="skill-note">连续快速出拳，输出核心</span></li>
+                        <li><span class="skill-name">肌肉强化</span> <span class="skill-points">15点</span> <span class="skill-note">被动力量提升</span></li>
+                        <li><span class="skill-name">旋风腿</span> <span class="skill-points">15点</span> <span class="skill-note">范围击退技能，控制与输出兼备</span></li>
+                        <li><span class="skill-name">钢铁皮肤</span> <span class="skill-points">10点</span> <span class="skill-note">物防提升，增加坦度</span></li>
+                        <li><span class="skill-name">斗神觉醒</span> <span class="skill-points">10点</span> <span class="skill-note">爆发buff，短时间增伤</span></li>
+                    </ul>
+                    <div class="tip-box">
+                        <strong>注意：</strong> 三转技能点相对紧张，优先输出技能，防御技能可后置。
+                    </div>
+                </div>
+
+                <!-- 四转 -->
+                <div class="build-card">
+                    <h3><span class="job-icon">4</span> 四转 · 奇袭者（Level 100-200）</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-name">雷鸣击</span> <span class="skill-points">20点</span> <span class="skill-note">主要输出，高倍率闪电攻击</span></li>
+                        <li><span class="skill-name">光速拳</span> <span class="skill-points">20点</span> <span class="skill-note">极速连打，爆发技能</span></li>
+                        <li><span class="skill-name">闪电精通</span> <span class="skill-points">20点</span> <span class="skill-note">被动闪电伤害强化</span></li>
+                        <li><span class="skill-name">钢铁之躯</span> <span class="skill-points">15点</span> <span class="skill-note">大幅提升防御与减伤</span></li>
+                        <li><span class="skill-name">斗神附体</span> <span class="skill-points">15点</span> <span class="skill-note">全属性强化buff</span></li>
+                        <li><span class="skill-name">进阶急速</span> <span class="skill-points">15点</span> <span class="skill-note">进一步提升攻速</span></li>
+                    </ul>
+                    <div class="tip-box">
+                        <strong>四转质变：</strong> 雷鸣击和光速拳是核心输出组合，务必优先满。钢铁之躯对高难BOSS有奇效。
+                    </div>
+                </div>
+
+                <!-- 五转 -->
+                <div class="build-card">
+                    <h3><span class="job-icon">5</span> 五转 · V矩阵（Level 200+）</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-name">闪电连击（V1）</span> <span class="skill-points">核心</span> <span class="skill-note">五转核心技能，超高频率闪电</span></li>
+                        <li><span class="skill-name">雷神降临（V2）</span> <span class="skill-points">核心</span> <span class="skill-note">召唤雷神之力，大范围爆发</span></li>
+                        <li><span class="skill-name">最终极速（V3）</span> <span class="skill-points">辅助</span> <span class="skill-note">攻速上限提升</span></li>
+                        <li><span class="skill-name">强化核心</span> <span class="skill-points">优先</span> <span class="skill-note">强化雷鸣击、光速拳等主攻技能</span></li>
+                    </ul>
+                    <div class="tip-box">
+                        <strong>V矩阵建议：</strong> 优先强化核心技能至满级，通用核心如祈祷、艾尔达新星也要适当搭配。
+                    </div>
+                </div>
+            </section>
+
+            <!-- 属性分析 -->
+            <section id="attributes">
+                <h2 class="section-title">属性分配与能力分析</h2>
+                <p class="section-sub">奇袭者主要属性是力量和敏捷</p>
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <h4>⚔️ 力量（STR）</h4>
+                        <p>奇袭者的主属性，直接提升物理攻击力。每次升级获得的AP建议全部投入力量。装备选择上优先考虑力量加成。</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>🏃 敏捷（DEX）</h4>
+                        <p>次要属性，影响命中率和少量攻击。通常不需要主动加敏捷，通过装备和技能被动即可满足需求。</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>❤️ HP/MP</h4>
+                        <p>奇袭者作为近战，需要一定的血量支撑。技能自带HP增加，后期可考虑部分装备潜能堆HP。</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>⚡ 攻速</h4>
+                        <p>奇袭者非常吃攻速，急速拳和最终极速可以显著提升输出频率。攻速提升优先级很高。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 加点顺序 -->
+            <section id="order">
+                <h2 class="section-title">推荐加点顺序</h2>
+                <p class="section-sub">按练级与BOSS不同场景的加点优先级</p>
+                <table class="order-table">
+                    <thead>
+                        <tr>
+                            <th>场景</th>
+                            <th>优先加点</th>
+                            <th>理由</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>日常练级</td>
+                            <td>范围攻击技能 > 移动速度 > 被动攻击</td>
+                            <td>提高清怪效率，加速升级节奏</td>
+                        </tr>
+                        <tr>
+                            <td>BOSS战</td>
+                            <td>单体高伤技能 > 生存技能 > 爆发buff</td>
+                            <td>保证输出同时兼顾生存</td>
+                        </tr>
+                        <tr>
+                            <td>混合加点</td>
+                            <td>核心输出技能满 > 辅助技能1点 > 被动满</td>
+                            <td>兼顾练级与BOSS，适应性更强</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="tip-box">
+                    <strong>推荐方案：</strong> 前期练级优先范围技能，100级以后逐步转向单体爆发，200级五转后以核心V技能为主。
+                </div>
+            </section>
+
+            <!-- 常见问题 -->
+            <section id="faq">
+                <h2 class="section-title">奇袭者加点常见问题</h2>
+                <div class="faq-item">
+                    <h3>Q: 奇袭者需要加敏捷吗？</h3>
+                    <p>不需要。奇袭者的主要属性是力量，敏捷可以通过装备和技能被动获得足够加成。AP全部加力量即可。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Q: 五转后核心技能怎么选？</h3>
+                    <p>优先强化雷鸣击和光速拳这两个核心输出技能。V1闪电连击是五转后最重要的技能，需要优先提升等级。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Q: 练级时技能点不够怎么办？</h3>
+                    <p>技能点可以通过完成转职任务和等级提升获得。建议先加主要范围攻击技能，被动技能可以后期补满。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Q: 奇袭者适合新手玩吗？</h3>
+                    <p>奇袭者操作简单，技能连招容易上手，但需要一定的装备支撑才能发挥高输出。如果是完全新手，建议先了解游戏基本机制。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Q: 装备选择上有什么建议？</h3>
+                    <p>优先选择力量加成和攻击力属性。装备潜能可以考虑力量百分比、攻击力、暴击伤害等词条。武器选择拳套类。</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrapper">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>冒险岛攻略</h4>
+                    <ul>
+                        <li>职业加点指南</li>
+                        <li>装备搭配推荐</li>
+                        <li>剧情任务攻略</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>奇袭者专题</h4>
+                    <ul>
+                        <li>技能机制详解</li>
+                        <li>练级路线规划</li>
+                        <li>BOSS打法技巧</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>友情提示</h4>
+                    <ul>
+                        <li>游戏内容以官方版本为准</li>
+                        <li>加点方案仅供参考</li>
+                        <li>请合理安排游戏时间</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2024 冒险岛奇袭者加点指南 · 本页面为玩家交流内容，非官方页面</p>
+            </div>
+        </div>
+    </footer>
+</body>
+  </html>
