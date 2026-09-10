@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>花都人力资源和社会保障局-业务指南与便民服务平台</title>
+    <meta name="description" content="花都区人力资源和社会保障局官方业务指南，涵盖就业创业、社会保险、人事人才、劳动关系等政策流程，提供网上办事入口与常见问题解答。">
+    <meta name="keywords" content="花都人力资源和社会保障局,花都社保,花都就业,花都人才引进,花都劳动监察,花都人社局">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: #f3f6fa;
+            color: #1e2b3c;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* header */
+        .site-header {
+            background: #0b3a5d;
+            color: white;
+            padding: 14px 0;
+            border-bottom: 4px solid #e0a800;
+        }
+        .header-inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .brand {
+            display: flex;
+            flex-direction: column;
+        }
+        .brand h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+        .brand .sub {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-top: 4px;
+        }
+        .header-links {
+            display: flex;
+            gap: 20px;
+            font-size: 0.95rem;
+        }
+        .header-links a {
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 2px;
+        }
+        .header-links a:hover {
+            border-color: #fff;
+        }
+        /* nav */
+        .main-nav {
+            background: #0f4c75;
+            padding: 10px 0;
+        }
+        .main-nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 25px;
+        }
+        .main-nav a {
+            color: white;
+            font-weight: 500;
+            padding: 5px 0;
+            display: inline-block;
+            border-bottom: 2px solid transparent;
+        }
+        .main-nav a:hover {
+            border-bottom-color: #ffc857;
+        }
+        /* quick bar */
+        .quick-tools {
+            background: #ffffff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            padding: 15px 0;
+            margin-bottom: 28px;
+        }
+        .quick-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+        .search-area {
+            display: flex;
+            flex: 2 1 300px;
+            background: #f0f4f8;
+            border-radius: 40px;
+            padding: 4px 6px 4px 18px;
+            border: 1px solid #ccdae5;
+        }
+        .search-area input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            padding: 10px 0;
+            font-size: 1rem;
+            outline: none;
+        }
+        .search-area button {
+            background: #0b3a5d;
+            color: white;
+            border: none;
+            border-radius: 40px;
+            padding: 8px 22px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .hot-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 24px;
+            font-size: 0.9rem;
+        }
+        .hot-links span {
+            color: #5f6c7c;
+            font-weight: 400;
+        }
+        .hot-links a {
+            color: #0f4c75;
+            font-weight: 500;
+            border-bottom: 1px dashed #9bb3c8;
+        }
+        /* hero / 服务总览 */
+        .service-overview {
+            background: linear-gradient(135deg, #e7f0f9 0%, #d4e2f0 100%);
+            border-radius: 24px;
+            padding: 28px 30px;
+            margin-bottom: 35px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+        }
+        .overview-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #0b3a5d;
+            margin-bottom: 10px;
+        }
+        .overview-sub {
+            font-size: 1rem;
+            color: #2a445c;
+            margin-bottom: 25px;
+            max-width: 850px;
+        }
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-top: 10px;
+        }
+        .card-item {
+            background: white;
+            padding: 18px 12px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
+            border: 1px solid #e2ebf3;
+        }
+        .card-item:hover {
+            transform: translateY(-4px);
+            border-color: #0b3a5d;
+        }
+        .card-item .icon {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        .card-item h3 {
+            font-size: 1.1rem;
+            color: #0b3a5d;
+            margin-bottom: 8px;
+        }
+        .card-item p {
+            font-size: 0.9rem;
+            color: #4e6478;
+        }
+        /* 2-column layout */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            border-left: 8px solid #e0a800;
+            padding-left: 18px;
+            margin-bottom: 20px;
+            color: #0b3a5d;
+        }
+        .news-list {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.03);
+        }
+        .news-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #e9eef3;
+            display: flex;
+            gap: 16px;
+            align-items: baseline;
+        }
+        .news-item:last-child {
+            border-bottom: none;
+        }
+        .news-date {
+            background: #edf3f8;
+            color: #0b3a5d;
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+        .news-link {
+            font-weight: 500;
+            color: #1a3448;
+        }
+        .news-link:hover {
+            color: #0f4c75;
+            text-decoration: underline;
+        }
+        .side-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .side-box {
+            background: white;
+            border-radius: 16px;
+            padding: 22px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.03);
+        }
+        .side-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #0b3a5d;
+            border-bottom: 2px solid #dde5ed;
+            padding-bottom: 8px;
+        }
+        .side-links a {
+            display: block;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f4f8;
+            color: #2b4a64;
+        }
+        .side-links a:hover {
+            color: #0b3a5d;
+            padding-left: 6px;
+            transition: all 0.2s;
+        }
+        .notice-box {
+            background: #fff8e7;
+            border-left: 6px solid #e0a800;
+        }
+        .notice-box ul li {
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            display: flex;
+            gap: 10px;
+        }
+        .notice-box span {
+            color: #b57c00;
+            font-weight: 600;
+        }
+        /* 政策专栏 */
+        .policy-area {
+            background: white;
+            border-radius: 20px;
+            padding: 28px;
+            margin-bottom: 40px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+        }
+        .policy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 22px;
+            margin-top: 20px;
+        }
+        .policy-item {
+            background: #f7fafd;
+            padding: 18px;
+            border-radius: 14px;
+            border: 1px solid #dce7f0;
+        }
+        .policy-item h4 {
+            color: #0f4c75;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        .policy-item p {
+            color: #3c5b74;
+            font-size: 0.9rem;
+        }
+        /* faq */
+        .faq-section {
+            background: #e6eef7;
+            padding: 30px;
+            border-radius: 24px;
+            margin-bottom: 50px;
+        }
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 40px;
+            margin-top: 20px;
+        }
+        .faq-item {
+            background: white;
+            border-radius: 14px;
+            padding: 16px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        .faq-question {
+            font-weight: 600;
+            color: #0b3a5d;
+            margin-bottom: 6px;
+        }
+        .faq-answer {
+            color: #3d566e;
+            font-size: 0.95rem;
+        }
+        /* footer */
+        .site-footer {
+            background: #0a2b44;
+            color: #d5e0ea;
+            padding: 30px 0;
+            margin-top: 30px;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 25px;
+        }
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
+        .footer-links a {
+            color: #cbd7e3;
+            border-bottom: 1px solid #3d5b78;
+        }
+        .footer-copyright {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        /* responsive */
+        @media (max-width: 980px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-inner {
+                flex-direction: column;
+                gap: 12px;
+                align-items: start;
+            }
+        }
+        @media (max-width: 600px) {
+            .service-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+            .overview-title {
+                font-size: 1.6rem;
+            }
+            .quick-grid {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .main-nav ul {
+                gap: 10px 16px;
+            }
+        }
+    </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">
+                <h1>花都人力资源和社会保障局</h1>
+                <div class="sub">花都区人社便民服务 · 政务公开 · 网上办事</div>
+            </div>
+            <div class="header-links">
+                <a href="#">登录</a>
+                <a href="#">注册</a>
+                <a href="#">智能问答</a>
+                <a href="#">无障碍</a>
+            </div>
+        </div>
+    </header>
+    
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">就业创业</a></li>
+                <li><a href="#">社会保险</a></li>
+                <li><a href="#">人事人才</a></li>
+                <li><a href="#">劳动关系</a></li>
+                <li><a href="#">职称评审</a></li>
+                <li><a href="#">办事指南</a></li>
+                <li><a href="#">政策法规</a></li>
+                <li><a href="#">互动交流</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- 快速服务与搜索 -->
+        <div class="quick-tools">
+            <div class="quick-grid">
+                <div class="search-area">
+                    <input type="text" placeholder="搜索社保、就业、人才引进政策...">
+                    <button type="button">搜索</button>
+                </div>
+                <div class="hot-links">
+                    <span>热门:</span>
+                    <a href="#">社保缴费</a>
+                    <a href="#">失业登记</a>
+                    <a href="#">人才补贴</a>
+                    <a href="#">劳动仲裁</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 服务总览卡片 -->
+        <section class="service-overview">
+            <h2 class="overview-title">人社服务 一网通办</h2>
+            <p class="overview-sub">花都区人力资源和社会保障局整合就业、社保、人才、劳动关系等高频业务，提供在线预约、进度查询、结果反馈等全流程服务。</p>
+            <div class="service-cards">
+                <div class="card-item">
+                    <div class="icon">📋</div>
+                    <h3>就业创业</h3>
+                    <p>招聘信息 · 创业补贴 · 就业援助</p>
+                </div>
+                <div class="card-item">
+                    <div class="icon">🛡️</div>
+                    <h3>社会保险</h3>
+                    <p>养老 · 医疗 · 失业 · 工伤</p>
+                </div>
+                <div class="card-item">
+                    <div class="icon">🧑‍💼</div>
+                    <h3>人事人才</h3>
+                    <p>人才引进 · 档案服务 · 职称申报</p>
+                </div>
+                <div class="card-item">
+                    <div class="icon">⚖️</div>
+                    <h3>劳动关系</h3>
+                    <p>劳动合同 · 仲裁 · 劳动监察</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 两栏资讯区 -->
+        <div class="content-grid">
+            <section class="news-list">
+                <h2 class="section-title">最新通知 · 政务动态</h2>
+                <div class="news-item">
+                    <span class="news-date">2025.03.18</span>
+                    <a href="#" class="news-link">关于开展2025年度花都区就业技能培训报名的公告</a>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">2025.03.15</span>
+                    <a href="#" class="news-link">社会保险待遇领取资格认证温馨提示（企业职工）</a>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">2025.03.12</span>
+                    <a href="#" class="news-link">花都区人才公寓申请指南（2025年第一批）</a>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">2025.03.08</span>
+                    <a href="#" class="news-link">关于调整工伤认定申请材料清单的通知</a>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">2025.03.05</span>
+                    <a href="#" class="news-link">劳动保障监察书面审查暨企业守法诚信评价开始</a>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">2025.03.01</span>
+                    <a href="#" class="news-link">2025年花都区“春风行动”专场招聘会预告</a>
+                </div>
+            </section>
+
+            <aside class="side-panel">
+                <div class="side-box">
+                    <h3>📌 快速办理通道</h3>
+                    <div class="side-links">
+                        <a href="#">个人社保参保证明</a>
+                        <a href="#">单位社保网上申报</a>
+                        <a href="#">就业创业证申请</a>
+                        <a href="#">劳动能力鉴定</a>
+                        <a href="#">职业技能等级认定</a>
+                    </div>
+                </div>
+                <div class="side-box notice-box">
+                    <h3>⚠️ 重点关注</h3>
+                    <ul>
+                        <li><span>2025年度</span>社保缴费基数申报截止至3月31日</li>
+                        <li><span>提醒</span>谨防社保诈骗，官方不索要银行卡密码</li>
+                        <li><span>公示</span>特殊工种提前退休人员名单(第二期)</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <!-- 政策专栏 -->
+        <section class="policy-area">
+            <h2 class="section-title">政策指南 · 实用解读</h2>
+            <div class="policy-grid">
+                <div class="policy-item">
+                    <h4>就业创业补贴</h4>
+                    <p>一次性创业资助、租金补贴、带动就业补贴等申请条件与流程解析。</p>
+                </div>
+                <div class="policy-item">
+                    <h4>养老金领取资格</h4>
+                    <p>全面推行远程自助认证，可通过“粤省事”或线下网点办理。</p>
+                </div>
+                <div class="policy-item">
+                    <h4>人才引进落户</h4>
+                    <p>学历、职称、技能人才落户花都的办理指引及常见问题。</p>
+                </div>
+                <div class="policy-item">
+                    <h4>劳动合同范本</h4>
+                    <p>参考文本及订立、变更、解除等环节注意事项。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ 帮助中心 -->
+        <section class="faq-section">
+            <h2 class="section-title" style="border-left-color: #0b3a5d;">常见问题解答</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">问：如何查询个人社保缴费记录？</div>
+                    <div class="faq-answer">可通过“广东人社”APP、“粤省事”小程序或花都区政务服务中心自助机查询打印，也可携带身份证到社保窗口办理。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">问：公司拖欠工资怎么办？</div>
+                    <div class="faq-answer">可先与单位协商，协商不成可向花都区劳动保障监察大队投诉，或申请劳动仲裁。电话：020-3688****（请以官网为准）。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">问：失业金申领条件是什么？</div>
+                    <div class="faq-answer">失业前用人单位和本人已缴纳失业保险费满一年，非因本人意愿中断就业且已进行失业登记，即可申领。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">问：办理退休需要哪些材料？</div>
+                    <div class="faq-answer">一般需身份证、户口本、社保卡、人事档案（如有）、照片等，建议提前拨打12345转人社咨询。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="#">政务公开</a>
+                <a href="#">网上办事</a>
+                <a href="#">数据开放</a>
+                <a href="#">联系咨询</a>
+                <a href="#">网站地图</a>
+            </div>
+            <div class="footer-copyright">
+                © 2025 花都人力资源和社会保障局 版权所有 · 政务服务平台
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
